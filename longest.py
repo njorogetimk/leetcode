@@ -1,10 +1,14 @@
 class get_longest:
     def get_long(self, strs):
+        # Check the constrains
+
+
         # initialize the tally
 
         tally = {}
         winner = ""
         for word in strs:
+            word = word.lower()
             for i in range(len(word)):
                 char = word[:i+1]
                 tally[char] = tally[char]+1 if tally.get(char, False) else 1
@@ -26,4 +30,11 @@ class get_longest:
                 number = count
 
         return  winner
+    
+    def constrain(self, strs):
+        if len(strs) < 1 or len(strs) > 200:
+            return 'Too long'
+        for word in strs:
+            if len(word) > 200:
+                return f'{word} is too long'
 
