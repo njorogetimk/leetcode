@@ -2,13 +2,12 @@
 Purpose: Get longest string from a string of characters
 """
 
-from operator import le
-
 
 class get_longest:
+
     def __init__(self, strs):
         self.strs = strs
-        
+
     def get_long(self):
         # Check if the input is a list
         # Check length of the string
@@ -22,7 +21,7 @@ class get_longest:
             return self.strs[0]
         elif len(self.strs) > 200:
             return "Too many characters to compare"
-        
+
         for word in self.strs:
             # Check if the word meets the constrains
             if len(word) > 200:
@@ -36,7 +35,6 @@ class get_longest:
 
         first = self.strs[0]
         counter = 1
-        word_counter = 0
         winner = ''
         for char in first:
             prefix = first[0:counter]
@@ -45,12 +43,12 @@ class get_longest:
                 if len(word) < len(prefix):
                     # prefix = 'ganner' word = 'gain'
                     return ''
-                
+
                 if word[0:counter] == prefix:
                     temp += 1
                 else:
                     temp -= 1
-                
+
             if temp == len(self.strs):
                 winner = prefix
             else:
