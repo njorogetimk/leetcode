@@ -56,6 +56,20 @@ class TestConstrains(unittest.TestCase):
         longest = check.get_long()
         assert longest == f'{string[0]} is too long'
     
+    def test_lower_case_only(self):
+        string = ['Tom']
+        check = get_longest(string)
+        longest = check.get_long()
+
+        assert longest == 'Must be lowercase only'
+    
+    def test_lower_case_only_2(self):
+        string = ['Tom', 'john']
+        check = get_longest(string)
+        longest = check.get_long()
+
+        assert longest == 'Must be lowercase only'
+    
         
 
 if __name__ == "__main__":

@@ -17,6 +17,8 @@ class get_longest:
         if len(self.strs) == 1:
             if len(self.strs[0]) > 200:
                 return f'{self.strs[0]} is too long'
+            elif not self.strs[0].islower():
+                return 'Must be lowercase only'
             return self.strs[0]
         elif len(self.strs) > 200:
             return "Too many characters to compare"
@@ -26,8 +28,9 @@ class get_longest:
             if len(word) > 200:
                 return f'{word} is too long'
             elif len(word) == 0:
-                return 'An empty word'
-            
+                return ''
+            elif not word.islower():
+                return 'Must be lowercase only'
         # Pick the first word
         # Check if there is a repeat of a prefix
 
