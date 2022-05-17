@@ -15,6 +15,8 @@ class get_longest:
         # Return the longest prefix if present
 
         if len(self.strs) == 1:
+            if len(self.strs[0]) > 200:
+                return f'{self.strs[0]} is too long'
             return self.strs[0]
         elif len(self.strs) > 200:
             return "Too many characters to compare"
