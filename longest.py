@@ -1,40 +1,56 @@
+"""
+Purpose: Get longest string from a string of characters
+"""
+
+from operator import le
+
+
 class get_longest:
-    def get_long(self, strs):
-        # Check the constrains
-
-
-        # initialize the tally
-
-        tally = {}
-        winner = ""
-        for word in strs:
-            word = word.lower()
-            for i in range(len(word)):
-                char = word[:i+1]
-                tally[char] = tally[char]+1 if tally.get(char, False) else 1
-
-        new_tally = tally.copy()
-        for prefix, number in tally.items():
-            if number == 1:
-                new_tally.pop(prefix)
+    def __init__(self, strs):
+        self.strs = strs
         
-        new_tally_prefixes = new_tally
-        
-        number = 0
-        for prefix, count in new_tally_prefixes.items():
-            if count > number:
-                winner = prefix
-                number = count
-            elif len(prefix) > len(winner) and count == number:
-                winner = prefix
-                number = count
+    def get_long(self):
+        # Check if the input is a list
+        # Check length of the string
+        # Return the longest prefix if present
 
-        return  winner
-    
-    def constrain(self, strs):
-        if len(strs) < 1 or len(strs) > 200:
-            return 'Too long'
-        for word in strs:
+        if len(self.strs) == 1:
+            return self.strs[0]
+        elif len(self.strs) > 200:
+            return "Too many characters to compare"
+        
+        for word in self.strs:
+            # Check if the word meets the constrains
             if len(word) > 200:
                 return f'{word} is too long'
+            elif len(word) == 0:
+                return 'An empty word'
+            
+        # Pick the first word
+        # Check if there is a repeat of a prefix
 
+        first = self.strs[0]
+        counter = 1
+        word_counter = 0
+        winner = ''
+        for char in first:
+            prefix = first[0:counter]
+            temp = 0
+            for word in self.strs:
+                if len(word) < len(prefix):
+                    # prefix = 'ganner' word = 'gain'
+                    return ''
+                
+                if word[0:counter] == prefix:
+                    temp += 1
+                else:
+                    temp -= 1
+                
+            if temp == len(self.strs):
+                winner = prefix
+            else:
+                break
+
+            counter += 1
+
+        return winner
