@@ -12,7 +12,7 @@ def find_words(words: List[str], chars: str) -> int:
         char_count = 0  # Character count in word that's in chars
         for char in word:
             if chars_temp.find(char) >= 0:
-                chars_temp = chars_temp.replace(char, '')
+                chars_temp = chars_temp.replace(char, '', 1)
                 char_count += 1
         if char_count == len(word):
             length += char_count

@@ -6,6 +6,11 @@ def test_usecase_found() -> None:
     assert find_words(["cat", "bt", "hat", "tree"], "atach") == 6
 
 
+def test_usecase_found2() -> None:
+    """Characters can form words"""
+    assert find_words(["hello","world","leetcode"], chars = "welldonehoneyr") == 10
+
+
 def test_usecase_notfound() -> None:
     """Characters cannot form words"""
     assert find_words(['tom', 'ken', 'paul'], 'adfujk') == 0
