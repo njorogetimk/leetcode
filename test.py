@@ -17,6 +17,13 @@ class TestProperInput(unittest.TestCase):
         
         assert longest == "fl"
     
+    def test_many_common2(self):
+        string = ["abc", "a"]
+        check = get_longest(string)
+        longest = check.get_long()
+        
+        assert longest == "a"
+    
     def test_many_not_common(self):
         string = ["flower","flow","flight", "jump"]
         check = get_longest(string)

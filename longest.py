@@ -42,7 +42,7 @@ class get_longest:
             for word in self.strs:
                 if len(word) < len(prefix):
                     # prefix = 'ganner' word = 'gain'
-                    return ''
+                    break
 
                 if word[0:counter] == prefix:
                     temp += 1
