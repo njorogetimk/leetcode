@@ -19,7 +19,7 @@ def test_usecase_3_2() -> None:
 
 def test_edgecase_1() -> None:
     """Test for an empty list"""
-    assert add_2([], []) == []
+    assert add_2([], []) == [0]
 
 def test_edgecase_2() -> None:
     """Test single empty list"""
