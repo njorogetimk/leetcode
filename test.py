@@ -24,6 +24,13 @@ def test_use_case_4() -> None:
 
     assert solve.searchRange([5, 7, 7, 8, 8, 10], 5) == [0, 0]
 
+def test_use_case_5() -> None:
+    """nums list of 1000 values"""
+    solve = Solution()
+
+    nums = list(i for i in range(0,10000))
+    assert solve.searchRange(nums, 999) == [999, 999]
+
 def test_edge_case_1() -> None:
     """nums = [5,7,7,8,8,10] target 6"""
     solve = Solution()
