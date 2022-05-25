@@ -1,41 +1,66 @@
 from typing import List
 
+def binary_search(lo, hi, condition):
+    """Generic binary search"""
+
+    while lo <= hi:
+        mid = (hi + lo)//2
+        result = condition(mid)
+
+        if result == 'found':
+            return mid
+        elif result == 'left':
+            hi = mid -1
+        else:
+            lo = mid + 1
+
+    return -1
+
+def find_first(nums: List[int], target: int) -> int:
+    """Find first occurrence of the target"""
+    lo, hi = 0, len(nums) - 1
+    def condition(mid) -> str:
+        mid_num = nums[mid]
+        if mid_num == target:
+
+            if mid == 0:
+                return 'found'
+            if nums[mid - 1] == target:
+                return 'left'
+            
+            return 'found'
+        elif mid_num > target:
+            # Search left
+            return 'left'
+        else:
+            # Search right
+            return 'right'
+
+    return binary_search(lo, hi, condition)
+
+def find_last(nums: List[int], target: int) -> int:
+    """Find last occurrence of the target"""
+    lo, hi = 0, len(nums) - 1
+    def condition(mid) -> str:
+        mid_num = nums[mid]
+
+        if mid_num == target:
+
+            if mid == hi:
+                return 'found'
+            elif nums[mid + 1] == target:
+                return 'right'
+            return 'found'
+        elif mid_num > target:
+            # Search left
+            return 'left'
+        else:
+            # Search right
+            return 'right'
+    return binary_search(lo, hi, condition)
+
 
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
-        hi, lo, mid = len(nums), 0, len(nums)//2
-        
-        def find_left(left_part, mid, target):
-            left = mid - left_part.count(target)
-            return left
-        
-        def find_right(right_part, mid, target):
-            right = mid + right_part.count(target)
-            return right
 
-        count = 0
-        while count < len(nums):
-            # Check if the mid == target
-            if nums[mid] == target:
-                first = mid if nums[mid-1] != target else find_left(nums[lo:mid], mid, target)
-
-                if mid == len(nums) - 1:
-                    # target last value in list
-                    last = mid
-                    return [first, last]
-
-                last = mid if nums[mid+1] != target else find_right(nums[mid+1:hi], mid, target)
-
-                return [first, last]
-            elif nums[mid] < target:
-                # target on the right
-                lo = mid
-                mid = lo + len(nums[lo:hi])//2
-            else:
-                # target on the left
-                hi = mid
-                mid = len(nums[lo:hi])//2
-            
-            count += 1    
-            
-        return [-1, -1]
+        return [find_first(nums, target), find_last(nums, target)]
