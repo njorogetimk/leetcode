@@ -16,6 +16,16 @@ def test_use_case_3() -> None:
 
     assert solve.count_rotations([8, 9, 1, 3, 5]) == 2
 
+def test_use_case_4() -> None:
+    """[8, 9, 1, 1, 1, 3, 5]"""
+
+    assert solve.count_rotations([8, 9, 1, 1, 1, 3, 5]) == 2
+
+def test_use_case_5() -> None:
+    """[1, 1, 1, 1, 1, 1]"""
+
+    assert solve.count_rotations([1, 1, 1, 1, 1, 1]) == 0
+
 def test_edge_case_1() -> None:
     """[1]"""
 
