@@ -39,3 +39,25 @@ def test_use_5() -> None:
     x = 10
 
     assert solve.minOperations(nums, x) == 3
+
+
+def test_use_6()-> None:
+    """[10,1,1,1,1,1], 5"""
+
+    assert solve.minOperations([10,1,1,1,1,1], 5) == 5
+
+
+def test_use_7()-> None:
+    """[10,1,1,1,1,1], 5"""
+
+    assert solve.minOperations([1,1,1,1,1,10], 5) == 5
+
+def test_use_8() -> None:
+    """[1,1], 3"""
+
+    assert solve.minOperations([1,1], 3) == -1
+
+def test_use_9() -> None:
+    """[8828,9581,49,9818,9974,9869,9991,10000,10000,10000,9999,9993,9904,8819,1231,6309], 134365"""
+
+    assert solve.minOperations([8828,9581,49,9818,9974,9869,9991,10000,10000,10000,9999,9993,9904,8819,1231,6309], 134365) == 16
