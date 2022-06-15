@@ -1,23 +1,22 @@
 All of Leet Code
 https://leetcode.com/njorogetimk/
 
-583. Delete Operation for Two Strings
+215. Kth Largest Element in an Array
 
-Given two strings word1 and word2, return the minimum number of steps required to make word1 and word2 the same.
+Given an integer array nums and an integer k, return the kth largest element in the array.
 
-In one step, you can delete exactly one character in either string.
+Note that it is the kth largest element in the sorted order, not the kth distinct element.
 
 Example 1:
 
-Input: word1 = "sea", word2 = "eat"
-Output: 2
-Explanation: You need one step to make "sea" to "ea" and another step to make "eat" to "ea".
+Input: nums = [3,2,1,5,6,4], k = 2
+Output: 5
 Example 2:
 
-Input: word1 = "leetcode", word2 = "etco"
+Input: nums = [3,2,3,1,2,4,5,5,6], k = 4
 Output: 4
 
 Constraints:
 
-1 <= word1.length, word2.length <= 500
-word1 and word2 consist of only lowercase English letters.
+1 <= k <= nums.length <= 104
+-104 <= nums[i] <= 104
