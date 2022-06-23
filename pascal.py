@@ -62,7 +62,7 @@ class Solution:
         for i in range(2,len(p_tri)):
             for j in range(1, len(p_tri[i])-1):
                 p_tri[i][j] = p_tri[i-1][j-1]+p_tri[i-1][j]
-        
+        # print('m')
         return p_tri
         
             
