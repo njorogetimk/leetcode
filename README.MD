@@ -1,2 +1,5 @@
-All of Leet Code
-https://leetcode.com/njorogetimk/
+# All of my Leet Code
+
+Go here [leet link](https://leetcode.com/njorogetimk/)
+
+Leet problem []()
