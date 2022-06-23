@@ -41,22 +41,30 @@ class Solution:
         # helper(numRows)
         # return ans
 
-        def get_rows(n):
+        # def get_rows(n):
 
-            if n:
-                print(n)
-                get_rows(n-1)
-                p_tri.append([1]*n)
-                # print(p_tri, n)
-                # print('----')
-                for i in range(1, n-1):
-                    p_tri[n-1][i] = p_tri[n-2][i] + p_tri[n-2][i-1]
+        #     if n:
+        #         print(n)
+        #         get_rows(n-1)
+        #         p_tri.append([1]*n)
+        #         # print(p_tri, n)
+        #         # print('----')
+        #         for i in range(1, n-1):
+        #             p_tri[n-1][i] = p_tri[n-2][i] + p_tri[n-2][i-1]
 
-        p_tri = []
-        get_rows(numRows)
+        # p_tri = []
+        # get_rows(numRows)
 
+        # return p_tri
+
+        p_tri = [[1]*i for i in range(1,numRows+1)]
+
+        for i in range(2,len(p_tri)):
+            for j in range(1, len(p_tri[i])-1):
+                p_tri[i][j] = p_tri[i-1][j-1]+p_tri[i-1][j]
+        
         return p_tri
-
+        
             
             
         
