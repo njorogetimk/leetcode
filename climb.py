@@ -35,6 +35,7 @@ class Solution:
         """
 
         # Implement Fibonacci
+        """
         if n <= 0: return 0
         if n == 1: return 1
         if n == 2: return 2
@@ -49,3 +50,11 @@ class Solution:
             one_before = total
         
         return total
+        """
+
+        bbf, bf = 1, 1
+
+        for _ in range(n-1):
+            bbf, bf = bf, bbf+bf
+        
+        return bf
