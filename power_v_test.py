@@ -20,4 +20,4 @@ def test_use_2():
 def test_edge_1():
     """ Input: lo = 1, hi = 1000, k = 1000 """
 
-    assert solve.get_power(1, 1000, 1000) == 234
+    assert solve.get_power(1, 1000, 1000) == 871
