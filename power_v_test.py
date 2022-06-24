@@ -16,6 +16,15 @@ def test_use_2():
 
     assert solve.get_power(7, 11, 4) == 7
 
+def test_use_3():
+    """ Input: lo = 10, hi = 20, k = 5 """
+
+    assert solve.get_power(10, 20, 5) == 13
+
+def test_use_3():
+    """ Input: lo = 10, hi = 20, k = 5 """
+
+    assert solve.get_power(377,903,243) == 765
 
 def test_edge_1():
     """ Input: lo = 1, hi = 1000, k = 1000 """
