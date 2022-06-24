@@ -19,6 +19,7 @@ Notice that for any integer `x`: `(lo <= x <= hi)` it is guaranteed that `x` wil
 ### Example 1:
 
 Input: `lo = 12`, `hi = 15`, `k = 2`
+
 Output: `13`
 
 Explanation: The power of `12` is `9` i.e `(12 --> 6 --> 3 --> 10 --> 5 --> 16 --> 8 --> 4 --> 2 --> 1)`
@@ -48,4 +49,5 @@ The fourth number in the sorted array is `7`.
 ### Constraints:
 
 `1 <= lo <= hi <= 1000`
+
 `1 <= k <= hi - lo + 1`
